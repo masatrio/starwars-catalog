@@ -1,0 +1,42 @@
+.m-top-5{
+  margin-top: 5px;
+}
+
+.m-top-10{
+  margin-top: 10px;
+}
+
+.m-top-20{
+  margin-top: 20px;
+}
+
+.m-top-30{
+  margin-top: 30px;
+}
+
+.m-top-40{
+  margin-top: 40px;
+}
+
+#movieList li{
+  cursor:pointer;
+}
+
+#arrow .list-item{
+  padding-left:24px!important;
+}
+
+#movieList li:hover{
+  background-color: #41e679;
+}
+
+.jumbotron{
+  padding-top: 6px;
+  padding-bottom: 12px;
+}
+
+#charList {
+  columns: 3;
+  -webkit-columns: 3;
+  -moz-columns: 3;
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html ng-app='tunaiku'>
+  <head>
+    <meta charset="utf-8">
+    <title>Star Wars Film Catalog</title>
+    <!-- Load CSS -->
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- Load JS -->
+    <script src="js/vendor/angular.min.js"></script>
+    <script src="js/vendor/jquery-3.2.1.slim.min.js"></script>
+    <script src="js/vendor/popper.min.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/vendor/onsenui.css">
+    <link rel="stylesheet" href="css/vendor/onsen-css-components.min.css">
+    <script src="js/vendor/onsenui.min.js"></script>
+  </head>
+  <body ng-controller="movie">
+    <div class="container-fluid">
+      <div class="row m-top-40">
+        <div class="col-md-5">
+          <ul class="list" id="movieList">
+            <li class="list-item" ng-repeat="x in movieData | orderBy:'episode_id'" ng-click="showMovieDetail(x.episode_id)">
+              <div class="list-item__left">
+                <img class="list-item__thumbnail" src="img/movieicon.jpg" alt="Cute kitten">
+              </div>
+
+              <div class="list-item__center">
+                <div class="list-item__title">Episode {{ x.episode_id }}</div>
+                <div class="list-item__subtitle">{{ x.title }}</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-1">
+          <ul class="list" style="background-image:none;" id="arrow">
+            <li class="list-item">
+              <div class="list-item__left">
+                <img src="img/arrow.png" class="list-item__thumbnail" ng-show="selection == 1">
+                <img src="img/blank.jpg" class="list-item__thumbnail" ng-show="selection != 1">
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="list-item__left">
+                <img src="img/arrow.png" class="list-item__thumbnail" ng-show="selection == 2">
+                <img src="img/blank.jpg" class="list-item__thumbnail" ng-show="selection != 2">
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="list-item__left">
+                <img src="img/arrow.png" class="list-item__thumbnail" ng-show="selection == 3">
+                <img src="img/blank.jpg" class="list-item__thumbnail" ng-show="selection != 3">
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="list-item__left">
+                <img src="img/arrow.png" class="list-item__thumbnail" ng-show="selection == 4">
+                <img src="img/blank.jpg" class="list-item__thumbnail" ng-show="selection != 4">
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="list-item__left">
+                <img src="img/arrow.png" class="list-item__thumbnail" ng-show="selection == 5">
+                <img src="img/blank.jpg" class="list-item__thumbnail" ng-show="selection != 5">
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="list-item__left">
+                <img src="img/arrow.png" class="list-item__thumbnail" ng-show="selection == 6">
+                <img src="img/blank.jpg" class="list-item__thumbnail" ng-show="selection != 6">
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="list-item__left">
+                <img src="img/arrow.png" class="list-item__thumbnail" ng-show="selection == 7">
+                <img src="img/blank.jpg" class="list-item__thumbnail" ng-show="selection != 7">
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-6" ng-show="detailVisible">
+          <div class="jumbotron" ng-show="detailVisible">
+            <h1 class="display-4">{{ selectionData.title }}</h1>
+            <p class="lead" align="justify" style="font-size:14px;">{{ selectionData.opening_crawl }}</p>
+            <hr class="my-1">
+            <div class="row">
+              <div class="col-md-4">
+                  Episode
+              </div>
+              <div class="col-md-8">
+                  {{ selectionData.episode_id }}
+              </div>
+            </div>
+            <hr class="my-1">
+            <div class="row">
+              <div class="col-md-4">
+                  Producer
+              </div>
+              <div class="col-md-8">
+                  {{ selectionData.producer }}
+              </div>
+            </div>
+            <hr class="my-1">
+            <div class="row">
+              <div class="col-md-4">
+                  Director
+              </div>
+              <div class="col-md-8">
+                  {{ selectionData.director }}
+              </div>
+            </div>
+            <hr class="my-1">
+            <div class="row">
+              <div class="col-md-4">
+                  Release Date
+              </div>
+              <div class="col-md-8">
+                  {{ selectionData.date + ' ' + selectionData.dateName }}
+              </div>
+            </div>
+            <hr class="my-1">
+            <div class="row">
+              <div class="col-md-4">
+                  Character
+              </div>
+              <div class="col-md-8">
+                <ul type="square" style="padding-left:20px" id="charList">
+                  <li ng-repeat="x in charSelect"><a href="#" ng-click="showCharDetail(x.id)">{{ x.name }}</a></li>
+                </ul>
+              </div>
+            </div>
+            <hr class="my-1">
+            <!-- <p class="lead">
+              <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+            </p> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="js/constanta.js" type="text/javascript">
+  </script>
+  <script src="js/app.js" type="text/javascript">
+  </script>
+  <script src="js/service.js" type="text/javascript">
+  </script>
+  <script src="js/controller/main-controller.js" type="text/javascript">
+  </script>
+</html>
