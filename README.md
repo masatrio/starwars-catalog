@@ -15,5 +15,5 @@ Method :
 4. When user click the movie list, it will run function to show the movie detail with pass the movie id to function.
 5. Selected movie will saved into variable to save active movie.
 6. Next move is to save the character who play on movie in array.
-7. So we can mix match array of character_id for current movie with array of character.
-8. And show the character name and detail.
+7. So we can mix match array of character_id for current movie with array of character detail data.
+8. Show the character name and detail.
